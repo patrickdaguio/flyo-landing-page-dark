@@ -1,0 +1,17 @@
+@mixin font($family, $size, $weight) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin flex($display, $align, $justify, $direction) {
+  display: $display;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin width($width, $margin) {
+  width: $width;
+  margin: $margin;
+}

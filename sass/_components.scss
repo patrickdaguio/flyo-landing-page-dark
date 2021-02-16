@@ -1,0 +1,270 @@
+/* Introduction  */
+.introduction {
+  // Header & Navigation
+  .nav {
+    @include font($raleway, 1em, $normal);
+    &__item {
+      list-style: none;
+      margin-left: 3.75em;
+
+      @include media("<=900px") {
+        margin-left: 2.25em;
+      }
+    }
+
+    @include media(">600px", "<=900px") {
+      font-size: 18px;
+    }
+
+    @include media(">=250px", "<=600px") {
+      font-size: 12px;
+    }
+
+    &__link {
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        font-weight: $bold;
+        text-decoration: underline;
+      }
+    }
+  }
+  // Main
+  .main {
+    &__highlight {
+      @include font($raleway, 2.5em, $bold);
+
+      @include media("<=900px") {
+        font-size: 1.45em;
+      }
+    }
+
+    &__desc {
+      @include font($raleway, 1.25em, $normal);
+      line-height: 1.5em;
+
+      @include media("<=900px") {
+        font-size: 14px;
+      }
+    }
+
+    &__btn {
+      padding: 1em 5.9em;
+      outline: none;
+      border: none;
+      border-radius: 40px;
+      background: linear-gradient(90deg, $cyan 0%, $blue 100%);
+      @include font($raleway, 1em, $bold);
+      color: $white;
+
+      &:hover {
+        background: linear-gradient(90deg, $cyan 0%, $cyan 100%);
+      }
+    }
+  }
+}
+
+/* Features */
+.features {
+  text-align: center;
+
+  &__img {
+    @include media("<=900px") {
+      max-width: 20%;
+    }
+  }
+
+  &__type {
+    @include font($openSans, 1.2em, $bold);
+
+    @include media("<=900px") {
+      font-size: 1.05em;
+    }
+  }
+
+  &__desc {
+    @include font($openSans, 14px, $normal);
+    line-height: 1.5em;
+  }
+}
+
+/* Process */
+.process {
+  &__highlight {
+    @include font($raleway, 2.5em, $bold);
+
+    @include media("<=900px") {
+      font-size: 1.1em;
+    }
+  }
+
+  &__desc {
+    @include font($openSans, 1em, $normal);
+
+    @include media("<=900px") {
+      font-size: 14px;
+    }
+  }
+
+  &__link {
+    @include font($openSans, 1em, $normal);
+    color: $cyan;
+    text-decoration: none;
+    border-bottom: 1px solid $cyan;
+
+    &:hover {
+      color: $white;
+      border-color: $white;
+    }
+
+    @include media("<=900px") {
+      font-size: 14px;
+    }
+  }
+}
+
+/* Testimonials */
+.testimonials {
+  @include font($openSans, 14px, $normal);
+  line-height: 1.5em;
+
+  @include media(">600px", "<=900px") {
+    font-size: 14px;
+  }
+
+  @include media(">=250px", "<=600px") {
+    font-size: 10px;
+    line-height: 1.8em;
+  }
+  &__item {
+    box-shadow: 7px 7px 10px hsl(214, 51%, 10%);
+    border-radius: 5px;
+  }
+
+  &__img {
+    border-radius: 50%;
+    width: 7.5%;
+
+    @include media("<=900px") {
+      width: 12%;
+    }
+  }
+
+  &__name {
+    font-size: 0.725em;
+
+    @include media("<=900px") {
+      font-size: 1em;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  &__title {
+    font-size: 0.6em;
+
+    @include media("<=900px") {
+      font-size: 0.9em;
+    }
+  }
+}
+
+/* Subscribe */
+.subscribe {
+  text-align: center;
+  &__box {
+    box-shadow: 3px 3px 8px hsl(240, 2%, 8%);
+    border-radius: 7px;
+  }
+
+  &__highlight {
+    @include font($raleway, 2em, $bold);
+
+    @include media("<=900px") {
+      font-size: 1.1em;
+    }
+  }
+
+  &__text {
+    @include font($openSans, 14px, $normal);
+    line-height: 1.5em;
+  }
+
+  &__input {
+    padding: 1em 2.9em;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    width: 93%;
+    @include font($openSans, 0.8em, $normal);
+
+    &::placeholder {
+      opacity: 0.5;
+    }
+
+    @include media("<=900px") {
+      width: 100%;
+      font-size: 13px;
+    }
+  }
+
+  &__error {
+    color: $red;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__button {
+    padding: 1em 2.1em;
+    outline: none;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(90deg, $cyan 0%, $blue 100%);
+    @include font($raleway, 14px, $bold);
+    color: $white;
+
+    &:hover {
+      background: linear-gradient(90deg, $cyan 0%, $cyan 100%);
+    }
+
+    @include media("<=900px") {
+      font-size: 13px;
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  @include font($openSans, 14px, $normal);
+
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+
+  &__icon {
+    border: 1px solid $white;
+    border-radius: 50%;
+    width: 2.1em;
+    height: 2.1em;
+    @include flex(flex, center, center, row);
+
+    &:hover {
+      border-color: $cyan;
+      color: $cyan;
+    }
+  }
+
+  &__location {
+    line-height: 1.5em;
+  }
+
+  &__link {
+    &:hover {
+      font-weight: $bold;
+      text-decoration: underline;
+    }
+  }
+}
