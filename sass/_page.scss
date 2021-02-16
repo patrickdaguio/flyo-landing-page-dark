@@ -32,11 +32,11 @@
     text-align: center;
     @include flex(flex, center, center, column);
 
-    @include media(">900px", "<=1050px") {
+    @include media(">600px", "<=1050px") {
       width: 80%;
     }
 
-    @include media("<=900px") {
+    @include media(">=250px", "<=600px") {
       width: 90%;
     }
 
@@ -84,7 +84,7 @@
     width: 72%;
     margin: 0em auto;
 
-    @include media("<=900px") {
+    @include media(">=250px", "<=600px") {
       width: 100%;
     }
   }
