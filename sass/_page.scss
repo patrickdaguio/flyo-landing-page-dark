@@ -3,19 +3,38 @@
   background: url(/images/bg-curvy-desktop.svg) no-repeat bottom;
   background-size: contain;
   background-color: $introDarkBlue;
-  padding: 4.5em 4.95em;
+  padding-bottom: 4.95em;
+  padding-top: 8em;
 
   @include media("<=900px") {
     background: url(/images/bg-curvy-mobile.svg) no-repeat bottom;
-    padding: 1.5em;
+    padding-bottom: 1.5em;
   }
   // Header & Navigation
   .header {
-    @include flex(flex, center, space-between, row);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 2em 4.95em;
+    padding-bottom: 0em;
+    transition: 0.3s ease;
+
+    &__container {
+      @include flex(flex, center, space-between, row);
+    }
+
+    @include media("<=900px") {
+      padding: 1.5em;
+      padding-bottom: 0em;
+    }
 
     &__logo {
       @include media("<=900px") {
-        width: 30%;
+        width: 125px;
+      }
+      @include media("<=600px") {
+        width: 100px;
       }
     }
 

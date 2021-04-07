@@ -1,11 +1,36 @@
 /* Introduction  */
 .introduction {
   // Header & Navigation
+  .header {
+    &__logo-inversed {
+      display: none;
+    }
+  }
   .nav {
     @include font($raleway, 1em, $normal);
     &__item {
       list-style: none;
       margin-left: 3.75em;
+      position: relative;
+
+      &::after {
+        content: "";
+        background-color: $cyan;
+        height: 2px;
+        position: absolute;
+        width: 0;
+        bottom: -0.25em;
+        left: 1px;
+        transition: 0.4s ease-in-out;
+        visibility: hidden;
+      }
+
+      &:hover {
+        &::after {
+          visibility: visible;
+          width: 100%;
+        }
+      }
 
       @include media("<=900px") {
         margin-left: 2.25em;
@@ -23,13 +48,32 @@
     &__link {
       color: $white;
       text-decoration: none;
-
-      &:hover {
-        font-weight: $bold;
-        text-decoration: underline;
-      }
     }
   }
+
+  .sticky {
+    background-color: white;
+    padding: 0.5em 4.95em;
+    z-index: 20;
+
+    @include media("<=900px") {
+      padding: 0.75em 1.35em;
+    }
+
+    .header__logo-inversed {
+      display: block;
+      width: 80px;
+    }
+
+    .header__logo {
+      display: none;
+    }
+
+    .nav__link {
+      color: $testimonialsDarkBlue;
+    }
+  }
+
   // Main
   .main {
     &__highlight {
@@ -57,9 +101,10 @@
       background: linear-gradient(90deg, $cyan 0%, $blue 100%);
       @include font($raleway, 1em, $bold);
       color: $white;
+      cursor: pointer;
 
       &:hover {
-        background: linear-gradient(90deg, $cyan 0%, $cyan 100%);
+        background: linear-gradient(90deg, $blue 0%, $cyan 100%);
       }
     }
   }
@@ -111,11 +156,33 @@
     @include font($openSans, 1em, $normal);
     color: $cyan;
     text-decoration: none;
-    border-bottom: 1px solid $cyan;
+    position: relative;
+
+    span {
+      transition: 0.4s ease-in-out;
+    }
+
+    &::after {
+      content: "";
+      background-color: $cyan;
+      height: 2px;
+      position: absolute;
+      width: 100%;
+      bottom: -0.25em;
+      right: 50%;
+      transform: translate(50%);
+      transition: 0.4s ease-in-out;
+    }
 
     &:hover {
-      color: $white;
-      border-color: $white;
+      color: white;
+      &::after {
+        width: 0;
+      }
+
+      span {
+        margin-left: 0.5em;
+      }
     }
 
     @include media("<=900px") {
@@ -249,6 +316,7 @@
     border-radius: 50%;
     width: 2.1em;
     height: 2.1em;
+    transition: 0.3 all;
     @include flex(flex, center, center, row);
 
     &:hover {
@@ -261,10 +329,29 @@
     line-height: 1.5em;
   }
 
+  &__item {
+    list-style: none;
+  }
+
   &__link {
+    position: relative;
+    &::after {
+      content: "";
+      background-color: $cyan;
+      height: 2px;
+      position: absolute;
+      width: 0;
+      bottom: -0.25em;
+      left: 1px;
+      transition: 0.4s ease-in-out;
+      visibility: hidden;
+    }
+
     &:hover {
-      font-weight: $bold;
-      text-decoration: underline;
+      &::after {
+        visibility: visible;
+        width: 100%;
+      }
     }
   }
 }

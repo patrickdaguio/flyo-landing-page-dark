@@ -15,3 +15,23 @@ function validateEmail(e) {
         e.preventDefault();
     }
 }
+
+// Stick Header
+
+const header = document.querySelector('.header')
+
+window.addEventListener('scroll', () => {
+    if (window.innerWidth > 475) {
+        header.classList.toggle("sticky", window.scrollY > 100)
+    }
+
+})
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 475) {
+        header.classList.add('sticky')
+    } else {
+        header.classList.remove('sticky')
+    }
+})
+
