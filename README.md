@@ -7,7 +7,7 @@ A simple fully responsive landing page made for the purpose of improving front-e
 ### Technologies
 
 - HTML5/CSS3
-- SCSS
+- SCSS (BEM Methodology)
 - Javascript (ES6+)
 
 Thanks for checking out the project! 😁
