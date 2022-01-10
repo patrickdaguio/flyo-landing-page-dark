@@ -2,7 +2,7 @@
 
 A simple fully responsive landing page made for the purpose of improving front-end skills.
 
-## [View live website](https://flyo-landing-page-dark.vercel.app/)
+### [View live website](https://flyo-landing-page-dark.vercel.app/)
 
 ---
 
